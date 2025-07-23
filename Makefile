@@ -44,7 +44,7 @@ clean:
 
 .PHONY: build
 build: clean ## Build service-hub binary.
-	CGO_ENABLED=$(CGO_ENABLED) GOOS=$(GOOS) go build $(GO_BUILD_FLAGS) -o bin/manager main.go
+	CGO_ENABLED=$(CGO_ENABLED) GOOS=$(GOOS) go build $(GO_BUILD_FLAGS) -o bin/manager cmd/main.go
 
 .PHONY: docker-build
 docker-build: build
