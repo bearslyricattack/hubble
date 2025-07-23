@@ -7,8 +7,15 @@ metadata:
   namespace: sealos
 data:
   config.yml: |
-    server:
-      addr: ":8428"
+    http:
+      addr: ":8080"
+    hubble:
+      addr: "hubble-relay.kube-system.svc.cluster.local:80"
+    redis:
+      addr: 
+      password: 
+      db: 0
+
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -31,10 +38,10 @@ spec:
     spec:
       containers:
         - args:
-            - config.yml
+            - --config=/config/config.yml
           command:
             - /manager
-          image: ghcr.io/labring/sealos-hubble-service:latest
+          image: bearslyricattack/sealos-hubble-service:latest
           imagePullPolicy: Always
           name: service-hubble
           ports:
@@ -45,8 +52,8 @@ spec:
               cpu: 500m
               memory: 1Gi
             requests:
-              cpu: 5m
-              memory: 64Mi
+              cpu: 50m
+              memory: 640Mi
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:

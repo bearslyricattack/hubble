@@ -1,8 +1,8 @@
 http:
   addr: ":8080"
 hubble:
-  addr:
+  addr: "hubble-relay.kube-system.svc.cluster.local:80"
 redis:
   addr:
   password:
-  db:
+  db: 0
