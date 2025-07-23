@@ -9,7 +9,7 @@ kubectl apply -f deploy/manifests/depoly.yaml
 ```bash
 ```
 
-### Victoria Metrics
+### Hubble Server
 
 In order to prevent performance degradation or abnormal behavior caused by excessive data size in Prometheus, VictoriaMetrics is utilized for data collection.
 

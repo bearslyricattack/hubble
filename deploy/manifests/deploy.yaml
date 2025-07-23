@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
         - args:
-            - /config/config.yml
+            - config.yml
           command:
             - /manager
           image: ghcr.io/labring/sealos-hubble-service:latest

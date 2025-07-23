@@ -1,8 +1,8 @@
 http:
   addr: ":8080"
 hubble:
-  addr: "localhost:4245"
+  addr:
 redis:
-  addr: "dbconn.sealoshzh.site:31352"
-  password: "7jppnfwm"
-  db: 3
+  addr:
+  password:
+  db:
